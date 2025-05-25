@@ -35,7 +35,7 @@ def divide_data_into_train_and_test (data: pd.DataFrame, t_size: float) -> tuple
     :return: tuple containing X_train, X_test, y_train and y_test
     """
     X = data.drop(columns=["target"])
-    y = data["target"]
+    y = data[["target"]]
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=t_size)
     return X_train, X_test, y_train, y_test
 
@@ -48,6 +48,11 @@ def merge_datasets(dataset1: pd.DataFrame, dataset2: pd.DataFrame) -> pd.DataFra
     :return: pandas dataframe containing merged datasets
     """
     return pd.concat([dataset1, dataset2], ignore_index=True)
+
+def shuffle_respectively(X, y):
+    df = pd.concat([X, y], axis = 1)
+    df = df.sample(frac=1, random_state=42).reset_index(drop=True)
+    return df.drop(columns=['target']), df[['target']]
 
 def preprocess_data (data):
     # TODO
