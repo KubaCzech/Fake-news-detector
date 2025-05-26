@@ -49,11 +49,32 @@ def merge_datasets(dataset1: pd.DataFrame, dataset2: pd.DataFrame) -> pd.DataFra
     """
     return pd.concat([dataset1, dataset2], ignore_index=True)
 
-def shuffle_respectively(X, y):
+def shuffle_respectively(X: pd.DataFrame, y: pd.DataFrame) -> tuple:
+    """
+    Function that shuffles X and y arrays respectively
+
+    :param X: pandas dataframe containing input values
+    :param y: pandas dataframe containing target variable
+    :return: tuple containing shuffled X and y
+    """
     df = pd.concat([X, y], axis = 1)
     df = df.sample(frac=1, random_state=42).reset_index(drop=True)
     return df.drop(columns=['target']), df[['target']]
 
-def preprocess_data (data):
-    # TODO
-    return
+def clean_data(X: pd.DataFrame, y: pd.DataFrame) -> tuple:
+    """
+    Function cleans the data, i. e. changes target to binary variables, drops redundant columns and cuts off beggining of true article
+
+    :param X: pandas dataframe containing input values
+    :param y: pandas dataframe containing target variable
+    :return: tuple containing clean X and y arrays
+    """
+    y[y['target']=='Fake'] = 0
+    y[y['target']=='True'] = 1
+    y['target'] = y['target'].values.astype(int)
+    
+    X = X.drop(columns=['title', 'subject', 'date'])
+
+    # Each article labeled as True is taken from Reuters and has 'city (Reuters) - ' on the beggining. We need to eliminate it!
+    X.loc[y['target']==1, 'text'] = X.loc[y['target']==1, 'text'].apply(lambda x: ' '.join(x.split()[x.split().index('(Reuters)')+2:]) if '(Reuters)' in x.split() else x)
+    return X, y
