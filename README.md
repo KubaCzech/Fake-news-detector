@@ -7,7 +7,7 @@
 
 **Author 2**: [@PBalewski](https://github.com/PBalewski)
 **Name and Surname**: Piotr Balewski
-**Index Number**: 156045
+**Index Number**: 156037
 
 ## Description
 This repository contains Natural Language Processing (NLP) project that detects whether the article is **real** or contains **fake news**. 
