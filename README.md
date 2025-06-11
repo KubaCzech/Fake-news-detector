@@ -15,6 +15,7 @@ With misinformation spreading rapidly on social media, having lightweight tools 
 
 We use a publicly available dataset from Kaggle:\
 [Fake News Detection Dataset by Emine Yetim](https://www.kaggle.com/datasets/emineyetm/fake-news-detection-datasets/data?select=News+_dataset)
+
 Dataset consist off over 40k articles, below there is its characteristic:
 ![Content](images/dataset_content.jpg)
 
