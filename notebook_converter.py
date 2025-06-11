@@ -2,7 +2,7 @@ from nbconvert import PythonExporter
 import nbformat
 import re
 
-notebooks = ['project']
+notebooks = ['project', 'analysis']
 for ntb in notebooks:
     with open(f"{ntb}.ipynb") as f:
         nb = nbformat.read(f, as_version=4)
