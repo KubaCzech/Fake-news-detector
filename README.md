@@ -1,47 +1,83 @@
-# NLP-project. Fakenews detector
+# 📰 Fake News Detector using NLP Techniques
 
 ## Authors
-**Author 1**: [@KubaCzech](https://github.com/KubaCzech)
-**Name and Surname**: Kuba Czech
+**Author 1**: [Kuba Czech](https://github.com/KubaCzech)
 **Index Number**: 156035
 
-**Author 2**: [@PBalewski](https://github.com/PBalewski)
-**Name and Surname**: Piotr Balewski
+**Author 2**: [Piotr Balewski](https://github.com/PBalewski)
 **Index Number**: 156037
 
+---
+
 ## Description
-This repository contains Natural Language Processing (NLP) project that detects whether the article is **real** or contains **fake news**. 
 
-With misinformation spreading rapidly on social media, having lightweight tools to flag potentially fake content is crucial. This model is built using Python and traditional machine learning techniques, making it fast and easy to interpret.
+With misinformation spreading rapidly on social media, having lightweight tools to flag potentially fake content is crucial. This project implements a **Fake News Detection** system using **Natural Language Processing (NLP)** techniques. We explore multiple vectorization strategies and classification models to distinguish between real and fake news.
 
-Dataset was taken from kaggle website: [Fake News Detection Dataset](https://www.kaggle.com/datasets/emineyetm/fake-news-detection-datasets/data?select=News+_dataset)
+---
 
-## Table of contents
-TODO - hiperlacze do plikow
-Each file in the repository has its own purpose:
-| File name | Meaning |
-| -- | -- |
-| analysis.ipynb | Exploratory analysis of the features |
-| common.py | Helper functions to run the notebook |
-| project.ipynb | Notebook with the whole project |
-| Datasets/True.csv | Dataset containing articles from reuters.com |
-| Datasets/Fake.csv | Dataset containing articles with fake news from different fake news outlets |
-| Embeddings/x_train_contextual_embeddings.npy | File with contextual embeddings of 400 test articles (randomly chosen) |
-| Embeddings/x_test_contextual_embeddings.npy | File with contextual embeddings of 1600 train articles (randomly chosen) |
-| Embeddings/y_train.npy | File with labels of train dataset |
-| Embeddings/y_test.npy | File with labels of test dataset |
+## ⚙️ Project Structure
 
-## Installation
-...
+The core pipeline involves:
 
-## Usage
-...
+1. **Preprocessing**:
 
-## Features
-...
+   - Lowercasing
+   - Punctuation removal
+   - Stopword removal
+   - Tokenization
+   - Lemmatization
 
-## Tests
-...
+2. **Text Vectorization Approaches**:
 
-## Division of work
-TODO - tabelka z podzialem pracy
+   - **Contextual Embeddings** using **DistilBERT**
+   - **Static Word Embeddings** using **GloVe 50d** vectors
+   - **TF-IDF (Term Frequency-Inverse Document Frequency)**
+
+3. **Classification Models Tested** (for each vectorization method):
+
+   - Support Vector Machine (SVM)
+   - Logistic Regression (LR)
+   - k-Nearest Neighbors (kNN)
+   - Decision Tree
+   - Random Forest
+   - Custom Feedforward Neural Network (FNN)
+
+---
+
+## 📊 Evaluation Metrics
+
+Each model was evaluated using the following metrics:
+
+- **Accuracy**
+- **Precision**
+- **Recall**
+- **F1 Score**
+- **Confusion Matrix**
+
+A comprehensive comparison of all models and approaches is presented at the bottom of the final report.
+
+---
+
+## 💻 Technologies Used
+
+- Python 3.9+
+- Scikit-learn
+- Tensorflow, Torch
+- Transformers (HuggingFace)
+- NLTK, re
+- Matplotlib (for visualization)
+
+---
+
+---
+
+## 📘 Report
+
+For a detailed walkthrough of the methodology, experiments, and findings, refer to the [`project.ipynb`](./project.ipynb).
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License.
+
