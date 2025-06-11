@@ -7,13 +7,16 @@
 **Author 2**: [Piotr Balewski](https://github.com/PBalewski)
 **Index Number**: 156037
 
----
-
 ## Description
 
 With misinformation spreading rapidly on social media, having lightweight tools to flag potentially fake content is crucial. This project implements a **Fake News Detection** system using **Natural Language Processing (NLP)** techniques. We explore multiple vectorization strategies and classification models to distinguish between real and fake news.
 
----
+## 📂 Dataset
+
+We use a publicly available dataset from Kaggle:\
+[Fake News Detection Dataset by Emine Yetim](https://www.kaggle.com/datasets/emineyetm/fake-news-detection-datasets/data?select=News+_dataset)
+Dataset consist off over 40k articles, below there is its characteristic:
+![Content](images/dataset_content.jpg)
 
 ## ⚙️ Project Structure
 
@@ -42,7 +45,6 @@ The core pipeline involves:
    - Random Forest
    - Custom Feedforward Neural Network (FNN)
 
----
 
 ## 📊 Evaluation Metrics
 
@@ -56,7 +58,6 @@ Each model was evaluated using the following metrics:
 
 A comprehensive comparison of all models and approaches is presented at the bottom of the final report.
 
----
 
 ## 💻 Technologies Used
 
@@ -67,15 +68,11 @@ A comprehensive comparison of all models and approaches is presented at the bott
 - NLTK, re
 - Matplotlib (for visualization)
 
----
-
----
 
 ## 📘 Report
 
 For a detailed walkthrough of the methodology, experiments, and findings, refer to the [`project.ipynb`](./project.ipynb).
 
----
 
 ## 📜 License
 
