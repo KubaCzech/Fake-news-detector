@@ -1,7 +1,7 @@
 # 📰 Fake News Detector using NLP Techniques
 
 ## Authors
-[Piotr Balewski](https://github.com/PBalewski) and [Kuba Czech](https://github.com/KubaCzech
+[Piotr Balewski](https://github.com/PBalewski) and [Kuba Czech](https://github.com/KubaCzech)
 ## Description
 
 With misinformation spreading rapidly on social media, having lightweight tools to flag potentially fake content is crucial. This project implements a **Fake News Detection** system using **Natural Language Processing (NLP)** techniques. We explore multiple vectorization strategies and classification models to distinguish between real and fake news.
