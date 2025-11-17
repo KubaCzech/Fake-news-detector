@@ -2,10 +2,8 @@
 
 ## Authors
 **Author 1**: [Kuba Czech](https://github.com/KubaCzech)
-**Index Number**: 156035
 
 **Author 2**: [Piotr Balewski](https://github.com/PBalewski)
-**Index Number**: 156037
 
 ## Description
 
